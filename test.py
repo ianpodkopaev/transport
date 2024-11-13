@@ -6,26 +6,25 @@ class IncrementApp(QWidget):
     def __init__(self):
         super().__init__()
 
-        # Set up the window
+
         self.setWindowTitle("Increment App")
         self.setGeometry(100, 100, 300, 100)
 
-        # Set up layout and widgets
+
         self.layout = QVBoxLayout()
 
-        # Create a QLineEdit to input the number
+
         self.input_field = QLineEdit(self)
         self.input_field.setPlaceholderText("Enter a number")
 
-        # Create a button that will increment the number
+
         self.button = QPushButton("Increment", self)
         self.button.clicked.connect(self.increment_number)
 
-        # Add widgets to the layout
+
         self.layout.addWidget(self.input_field)
         self.layout.addWidget(self.button)
 
-        # Set the main layout
         self.setLayout(self.layout)
 
     def increment_number(self):
@@ -38,7 +37,7 @@ class IncrementApp(QWidget):
             self.input_field.setText("Enter a valid number")
 
 
-# Run the application
+
 app = QApplication(sys.argv)
 window = IncrementApp()
 window.show()
