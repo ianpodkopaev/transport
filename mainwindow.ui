@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>w_main</class>
+ <widget class="QWidget" name="w_main">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1296</width>
+    <height>791</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Transport</string>
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>590</y>
+     <width>361</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Count</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>440</y>
+     <width>661</width>
+     <height>321</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSplitter" name="splitter_5">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>600</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Horizontal</enum>
+   </property>
+   <widget class="QSplitter" name="splitter">
+    <property name="orientation">
+     <enum>Qt::Orientation::Vertical</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Entrence</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit"/>
+   </widget>
+   <widget class="QSplitter" name="splitter_2">
+    <property name="orientation">
+     <enum>Qt::Orientation::Vertical</enum>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Outputs</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_2"/>
+   </widget>
+   <widget class="QSplitter" name="splitter_3">
+    <property name="orientation">
+     <enum>Qt::Orientation::Vertical</enum>
+    </property>
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Cycle duration</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_3"/>
+   </widget>
+   <widget class="QSplitter" name="splitter_4">
+    <property name="orientation">
+     <enum>Qt::Orientation::Vertical</enum>
+    </property>
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Lanes</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_4"/>
+   </widget>
+  </widget>
+  <widget class="QSplitter" name="splitter_11">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>170</y>
+     <width>1280</width>
+     <height>213</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Horizontal</enum>
+   </property>
+   <widget class="QSplitter" name="splitter_6">
+    <property name="orientation">
+     <enum>Qt::Orientation::Vertical</enum>
+    </property>
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Intecity</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tableWidget"/>
+   </widget>
+   <widget class="QSplitter" name="splitter_7">
+    <property name="orientation">
+     <enum>Qt::Orientation::Vertical</enum>
+    </property>
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>TrafficSceme</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tableWidget_2"/>
+   </widget>
+   <widget class="QSplitter" name="splitter_8">
+    <property name="orientation">
+     <enum>Qt::Orientation::Vertical</enum>
+    </property>
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Intervals</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tableWidget_3"/>
+   </widget>
+   <widget class="QSplitter" name="splitter_9">
+    <property name="orientation">
+     <enum>Qt::Orientation::Vertical</enum>
+    </property>
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Radius</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tableWidget_4"/>
+   </widget>
+   <widget class="QSplitter" name="splitter_10">
+    <property name="orientation">
+     <enum>Qt::Orientation::Vertical</enum>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
