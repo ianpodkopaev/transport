@@ -13,7 +13,7 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHeaderView, QLabel,
 
 from PySide6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
 from ui_mainwindow import Ui_w_main
-
+letters = 'abcdefghijklmnopqrstuvwxyz'
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -27,8 +27,8 @@ class MainWindow(QMainWindow):
         self.ui.tableWidget_2.setColumnCount(5)
         self.ui.tableWidget_2.setHorizontalHeaderLabels(["№ полосы", "выход","Л","Г","О"])
         self.ui.tableWidget_3.setRowCount(0)
-        self.ui.tableWidget_3.setColumnCount(5)
-        self.ui.tableWidget_3.setHorizontalHeaderLabels(["№ полосы", "выход","R","Delay","Ky"])
+        self.ui.tableWidget_3.setColumnCount(7)
+        self.ui.tableWidget_3.setHorizontalHeaderLabels(["№ полосы", "выход","начало","конец","R","Delay","Ky"])
         self.ui.tableWidget_4.setRowCount(0)
         self.ui.tableWidget_4.setColumnCount(3)
         self.ui.tableWidget_4.setHorizontalHeaderLabels(['Л', 'Г' ,'О'])
@@ -54,17 +54,18 @@ class MainWindow(QMainWindow):
 
     def TableOne(self, text):
         try:
-            rowsCount = int(self.ui.lineEdit_2.text())
-            self.ui.tableWidget_2.setRowCount(rowsCount)
+
+            rowsCount = int(self.ui.lineEdit_2.text())+1
+            self.ui.tableWidget.setRowCount(rowsCount)
 
             input_letter = self.ui.lineEdit.text().strip()
 
-            alphabet = 'abcdefghijklmnopqrstuvwxyz'
+            alphabet = letters[:rowsCount]
 
             for row in range(rowsCount):
-                self.ui.tableWidget_2.setItem(row, 0, QTableWidgetItem(input_letter))
+                self.ui.tableWidget.setItem(row, 0, QTableWidgetItem(input_letter))
                 letter = alphabet[row % len(alphabet)]
-                self.ui.tableWidget_2.setItem(row, 1, QTableWidgetItem(letter))
+                self.ui.tableWidget.setItem(row, 1, QTableWidgetItem(letter))
 
         except ValueError:
             return
@@ -73,70 +74,79 @@ class MainWindow(QMainWindow):
 
     def TableTwo(self, text):
         try:
-            groupCount = int(self.ui.lineEdit_4.text())
-            repeatCount = int(self.ui.lineEdit_2.text())
+            linesCount = int(self.ui.lineEdit_4.text())
+            outputsCount = int(self.ui.lineEdit_2.text())+1
+
         except ValueError:
             return  
 
-        totalRows = groupCount * repeatCount
+        totalRows = linesCount * outputsCount
+        self.ui.tableWidget_2.setRowCount(totalRows)
+
+
+        alphabet = letters[:outputsCount]
+
+        for i in range(totalRows):
+            groupNumber = (i // outputsCount) + 1
+            self.ui.tableWidget_2.setItem(i, 0, QTableWidgetItem(str(groupNumber)))
+            letter = alphabet[i % len(alphabet)]
+            self.ui.tableWidget_2.setItem(i, 1, QTableWidgetItem(letter))
+
+            for col in range(2, self.ui.tableWidget_2.columnCount()):
+                combo = QComboBox()
+                combo.addItems(["True", "False"])
+                self.ui.tableWidget_2.setCellWidget(i, col, combo)
+
+
+    def TableThree(self,text):
+        try:
+            linesCount = int(self.ui.lineEdit_4.text())
+            outputsCount = int(self.ui.lineEdit_2.text())+1
+        except ValueError:
+            return  
+
+        totalRows = linesCount * outputsCount
         self.ui.tableWidget_3.setRowCount(totalRows)
 
         alphabet = ['a', 'b', 'c']
 
         for i in range(totalRows):
-            groupNumber = (i // repeatCount) + 1
+            groupNumber = (i // outputsCount) + 1
             self.ui.tableWidget_3.setItem(i, 0, QTableWidgetItem(str(groupNumber)))
             letter = alphabet[i % len(alphabet)]
             self.ui.tableWidget_3.setItem(i, 1, QTableWidgetItem(letter))
 
-            for col in range(2, self.ui.tableWidget_3.columnCount()):
-                combo = QComboBox()
-                combo.addItems(["True", "False"])
-                self.ui.tableWidget_3.setCellWidget(i, col, combo)
-
-
-    def TableThree(self,text):
-        try:
-            groupCount = int(self.ui.lineEdit_4.text())
-            repeatCount = int(self.ui.lineEdit_2.text())
-        except ValueError:
-            return  
-
-        totalRows = groupCount * repeatCount
-        self.ui.tableWidget_4.setRowCount(totalRows)
-
-        alphabet = ['a', 'b', 'c']
-
-        for i in range(totalRows):
-            groupNumber = (i // repeatCount) + 1
-            self.ui.tableWidget_4.setItem(i, 0, QTableWidgetItem(str(groupNumber)))
-            letter = alphabet[i % len(alphabet)]
-            self.ui.tableWidget_4.setItem(i, 1, QTableWidgetItem(letter)) 
-
 
     def TableFour(self):
-        self.ui.tableWidget_5.setRowCount(1)
+        try:
+            linesCount = int(self.ui.lineEdit_4.text())
+            outputsCount = int(self.ui.lineEdit_2.text()) + 1
+        except ValueError:
+            return
+
+        totalRows = linesCount * outputsCount
+        self.ui.tableWidget_3.setRowCount(totalRows)
         
-        for column in range(self.ui.tableWidget_5.columnCount()):
+        for column in range(self.ui.tableWidget_4.columnCount()):
             item = QTableWidgetItem()
             item.setFlags(item.flags() | Qt.ItemIsEditable)
-            self.ui.tableWidget_5.setItem(0, column, item)
+            self.ui.tableWidget_4.setItem(0, column, item)
 
 
     def FinalTable(self):
         try:
-            groupCount = int(self.ui.lineEdit_4.text())
-            repeatCount = int(self.ui.lineEdit_2.text())
+            linesCount = int(self.ui.lineEdit_4.text())
+            outputsCount = int(self.ui.lineEdit_2.text())
         except ValueError:
             return  
 
-        totalRows = groupCount * repeatCount
+        totalRows = linesCount * outputsCount
         self.ui.tableWidget_5.setRowCount(totalRows)
 
         alphabet = ['a', 'b', 'c']
 
         for i in range(totalRows):
-            groupNumber = (i // repeatCount) + 1
+            groupNumber = (i // outputsCount) + 1
             self.ui.tableWidget_5.setItem(i, 0, QTableWidgetItem(str(groupNumber)))
             letter = alphabet[i % len(alphabet)]
             self.ui.tableWidget_5.setItem(i, 1, QTableWidgetItem(letter)) 
