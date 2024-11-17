@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1296</width>
-    <height>791</height>
+    <width>1488</width>
+    <height>1172</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1488</width>
+    <height>1172</height>
+   </size>
   </property>
   <property name="font">
    <font>
@@ -18,34 +24,66 @@
   <property name="windowTitle">
    <string>Transport</string>
   </property>
+  <widget class="QTableWidget" name="tableWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>850</y>
+     <width>641</width>
+     <height>281</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSplitter" name="splitter_7">
+   <property name="geometry">
+    <rect>
+     <x>501</x>
+     <y>68</y>
+     <width>461</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Vertical</enum>
+   </property>
+   <widget class="QLabel" name="label_6">
+    <property name="text">
+     <string>TrafficSceme</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget_2"/>
+  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>830</x>
-     <y>590</y>
-     <width>361</width>
-     <height>171</height>
+     <x>1100</x>
+     <y>1020</y>
+     <width>341</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="text">
     <string>Count</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="tableWidget_5">
+  <widget class="QSplitter" name="splitter_10">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>440</y>
-     <width>661</width>
-     <height>321</height>
+     <x>993</x>
+     <y>68</y>
+     <width>486</width>
+     <height>361</height>
     </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Vertical</enum>
    </property>
   </widget>
   <widget class="QSplitter" name="splitter_5">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>70</y>
+     <x>9</x>
+     <y>9</y>
      <width>600</width>
      <height>48</height>
     </rect>
@@ -98,67 +136,85 @@
     <widget class="QLineEdit" name="lineEdit_4"/>
    </widget>
   </widget>
-  <widget class="QSplitter" name="splitter_11">
+  <widget class="QSplitter" name="splitter_6">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>170</y>
-     <width>1280</width>
-     <height>213</height>
+     <x>9</x>
+     <y>68</y>
+     <width>471</width>
+     <height>301</height>
     </rect>
    </property>
    <property name="orientation">
-    <enum>Qt::Orientation::Horizontal</enum>
+    <enum>Qt::Orientation::Vertical</enum>
    </property>
-   <widget class="QSplitter" name="splitter_6">
-    <property name="orientation">
-     <enum>Qt::Orientation::Vertical</enum>
-    </property>
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Intecity</string>
-     </property>
-    </widget>
-    <widget class="QTableWidget" name="tableWidget"/>
-   </widget>
-   <widget class="QSplitter" name="splitter_7">
-    <property name="orientation">
-     <enum>Qt::Orientation::Vertical</enum>
-    </property>
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>TrafficSceme</string>
-     </property>
-    </widget>
-    <widget class="QTableWidget" name="tableWidget_2"/>
-   </widget>
-   <widget class="QSplitter" name="splitter_8">
-    <property name="orientation">
-     <enum>Qt::Orientation::Vertical</enum>
-    </property>
-    <widget class="QLabel" name="label_7">
-     <property name="text">
-      <string>Intervals</string>
-     </property>
-    </widget>
-    <widget class="QTableWidget" name="tableWidget_3"/>
-   </widget>
-   <widget class="QSplitter" name="splitter_9">
-    <property name="orientation">
-     <enum>Qt::Orientation::Vertical</enum>
-    </property>
-    <widget class="QLabel" name="label_8">
-     <property name="text">
-      <string>Radius</string>
-     </property>
-    </widget>
-    <widget class="QTableWidget" name="tableWidget_4"/>
-   </widget>
-   <widget class="QSplitter" name="splitter_10">
-    <property name="orientation">
-     <enum>Qt::Orientation::Vertical</enum>
+   <widget class="QLabel" name="label_5">
+    <property name="text">
+     <string>Intecity</string>
     </property>
    </widget>
+   <widget class="QTableWidget" name="tableWidget"/>
+  </widget>
+  <widget class="QSplitter" name="splitter_8">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>435</y>
+     <width>641</width>
+     <height>381</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Vertical</enum>
+   </property>
+   <widget class="QLabel" name="label_7">
+    <property name="text">
+     <string>Intervals</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget_3"/>
+  </widget>
+  <widget class="QSplitter" name="splitter_9">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>440</y>
+     <width>521</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Vertical</enum>
+   </property>
+   <widget class="QLabel" name="label_8">
+    <property name="text">
+     <string>Dynamic coeff</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget_4"/>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>820</y>
+     <width>66</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Loadlevel</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget_6">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>850</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
   </widget>
  </widget>
  <resources>

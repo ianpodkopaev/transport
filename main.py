@@ -30,11 +30,14 @@ class MainWindow(QMainWindow):
         self.ui.tableWidget_3.setColumnCount(7)
         self.ui.tableWidget_3.setHorizontalHeaderLabels(["№ полосы", "выход","начало","конец","R","Delay","Ky"])
         self.ui.tableWidget_4.setRowCount(0)
-        self.ui.tableWidget_4.setColumnCount(3)
-        self.ui.tableWidget_4.setHorizontalHeaderLabels(['Л', 'Г' ,'О'])
+        self.ui.tableWidget_4.setColumnCount(5)
+        self.ui.tableWidget_4.setHorizontalHeaderLabels(["№ полосы", "выход",'Л', 'Г' ,'О'])
         self.ui.tableWidget_5.setRowCount(0)
         self.ui.tableWidget_5.setColumnCount(6)
         self.ui.tableWidget_5.setHorizontalHeaderLabels(['№ полосы', 'выход' ,'Л', 'Г', 'О', 'Кпов'])
+        self.ui.tableWidget_6.setRowCount(0)
+        self.ui.tableWidget_6.setColumnCount(2)
+        self.ui.tableWidget_6.setHorizontalHeaderLabels(['№ полосы', 'загрузка'])
 
         self.ui.lineEdit_2.textEdited.connect(self.TableOne)
         self.ui.lineEdit.textEdited.connect(self.TableOne)
@@ -43,7 +46,13 @@ class MainWindow(QMainWindow):
         self.ui.lineEdit_4.textEdited.connect(self.TableTwo)
 
         self.ui.lineEdit_2.textEdited.connect(self.TableThree)
-        self.ui.lineEdit_4.textEdited.connect(self.TableThree) 
+        self.ui.lineEdit_4.textEdited.connect(self.TableThree)
+
+        self.ui.lineEdit_2.textEdited.connect(self.TableFour)
+        self.ui.lineEdit_4.textEdited.connect(self.TableFour)
+
+        self.ui.lineEdit_2.textEdited.connect(self.TableSix)
+        self.ui.lineEdit_4.textEdited.connect(self.TableSix)
 
         self.ui.lineEdit_2.textEdited.connect(self.FinalTable)
         self.ui.lineEdit_4.textEdited.connect(self.FinalTable) 
@@ -108,7 +117,7 @@ class MainWindow(QMainWindow):
         totalRows = linesCount * outputsCount
         self.ui.tableWidget_3.setRowCount(totalRows)
 
-        alphabet = ['a', 'b', 'c']
+        alphabet = letters[:outputsCount]
 
         for i in range(totalRows):
             groupNumber = (i // outputsCount) + 1
@@ -125,18 +134,61 @@ class MainWindow(QMainWindow):
             return
 
         totalRows = linesCount * outputsCount
-        self.ui.tableWidget_3.setRowCount(totalRows)
-        
-        for column in range(self.ui.tableWidget_4.columnCount()):
-            item = QTableWidgetItem()
-            item.setFlags(item.flags() | Qt.ItemIsEditable)
-            self.ui.tableWidget_4.setItem(0, column, item)
+        self.ui.tableWidget_4.setRowCount(totalRows)
+
+        alphabet = letters[:outputsCount]
+
+        for i in range(totalRows):
+            groupNumber = (i // outputsCount) + 1
+            self.ui.tableWidget_4.setItem(i, 0, QTableWidgetItem(str(groupNumber)))
+            letter = alphabet[i % len(alphabet)]
+            self.ui.tableWidget_4.setItem(i, 1, QTableWidgetItem(letter))
+
+        # for column in range(self.ui.tableWidget_4.columnCount()):
+        #     item = QTableWidgetItem()
+        #     item.setFlags(item.flags() | Qt.ItemIsEditable)
+        #     self.ui.tableWidget_4.setItem(0, column, item)
+            # try:
+        #     linesCount = int(self.ui.lineEdit_4.text())
+        #     outputsCount = int(self.ui.lineEdit_2.text()) + 1
+        # except ValueError:
+        #     return
+        #
+        # totalRows = linesCount * outputsCount
+        # self.ui.tableWidget_4.setRowCount(totalRows)
+        #
+        # for row in range(rowsCount):
+        #     self.ui.tableWidget.setItem(row, 0, QTableWidgetItem(input_letter))
+        #     letter = alphabet[row % len(alphabet)]
+        #     self.ui.tableWidget.setItem(row, 1, QTableWidgetItem(letter))
+        #
+        # for column in range(self.ui.tableWidget_4.columnCount()):
+        #     item = QTableWidgetItem()
+        #     item.setFlags(item.flags() | Qt.ItemIsEditable)
+        #     self.ui.tableWidget_4.setItem(0, column, item)
+
+    def TableSix(self, text):
+        try:
+            linesCount = int(self.ui.lineEdit_4.text())
+
+        except ValueError:
+            return
+
+
+        self.ui.tableWidget_6.setRowCount(linesCount)
+
+
+        for i in range(linesCount):
+            groupNumber = (i+1)
+            self.ui.tableWidget_6.setItem(i, 0, QTableWidgetItem(str(groupNumber)))
+
+
 
 
     def FinalTable(self):
         try:
             linesCount = int(self.ui.lineEdit_4.text())
-            outputsCount = int(self.ui.lineEdit_2.text())
+            outputsCount = int(self.ui.lineEdit_2.text())+1
         except ValueError:
             return  
 
