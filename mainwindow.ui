@@ -6,15 +6,9 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1488</width>
-    <height>1172</height>
+    <width>1536</width>
+    <height>1267</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>1488</width>
-    <height>1172</height>
-   </size>
   </property>
   <property name="font">
    <font>
@@ -56,7 +50,7 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>1100</x>
+     <x>1000</x>
      <y>1020</y>
      <width>341</width>
      <height>101</height>
@@ -216,6 +210,40 @@
     </rect>
    </property>
   </widget>
+  <widget class="QScrollArea" name="scrollArea">
+   <property name="geometry">
+    <rect>
+     <x>-90</x>
+     <y>-60</y>
+     <width>1671</width>
+     <height>1361</height>
+    </rect>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1669</width>
+      <height>1359</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <zorder>scrollArea</zorder>
+  <zorder>tableWidget_5</zorder>
+  <zorder>splitter_7</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>splitter_10</zorder>
+  <zorder>splitter_5</zorder>
+  <zorder>splitter_6</zorder>
+  <zorder>splitter_8</zorder>
+  <zorder>splitter_9</zorder>
+  <zorder>label_9</zorder>
+  <zorder>tableWidget_6</zorder>
  </widget>
  <resources>
   <include location="icons.qrc"/>
