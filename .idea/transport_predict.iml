@@ -7,7 +7,7 @@
     <content url="file://$USER_HOME$/paho.mqtt.python/src">
       <sourceFolder url="file://$USER_HOME$/paho.mqtt.python/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.12" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

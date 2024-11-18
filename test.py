@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QPushButton
+from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QPushButton, QTableWidget
 
 
 class IncrementApp(QWidget):
@@ -41,4 +41,4 @@ class IncrementApp(QWidget):
 app = QApplication(sys.argv)
 window = IncrementApp()
 window.show()
-sys.exit(app.exec_())
+sys.exit(app.exec())

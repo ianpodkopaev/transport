@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="335e0177-04eb-41e3-9c3d-bcbe3cdc36cb" name="Changes" comment="fix logic">
+    <list default="true" id="335e0177-04eb-41e3-9c3d-bcbe3cdc36cb" name="Changes" comment="fix half logic">
+      <change beforePath="$PROJECT_DIR$/.idea/transport_predict.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/transport_predict.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainwindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/mainwindow.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui_mainwindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui_mainwindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,15 +114,7 @@
       <option name="project" value="LOCAL" />
       <updated>1731881186847</updated>
     </task>
-    <task id="LOCAL-00006" summary="fix logic">
-      <option name="closed" value="true" />
-      <created>1731884438975</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1731884438975</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,7 +131,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="123" />
     <MESSAGE value="fix half logic" />
-    <MESSAGE value="fix logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix half logic" />
   </component>
 </project>
