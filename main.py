@@ -15,17 +15,17 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
 from ui_mainwindow import Ui_w_main
 letters = 'abcdefghijklmnopqrstuvwxyz'
 
-#const
-tauQ
-Kk = 0
-Ks=0
-Km=0
-ko = 0
-kl = 0
-
-q=[[],[]]
-c=0
-vehicletype=[[],[]]
+# #const
+# tQ = 0
+# Kk = 0
+# Ks=0
+# Km=0
+# ko = 0
+# kl = 0
+#
+# q=[[],[]]
+# c=0
+# vehicletype=[[],[]]
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -74,20 +74,20 @@ class MainWindow(QMainWindow):
         self.TableFour()
 
 
-    def EstimateApproachQueueResolutionTime(self,text):
-        try:
-            tauQ=(Q/s0)+deltaT+X*c
-           # Q=0
-          #  delQ=[[],[]]
-            #цикловой объем спроса
-           # for iOut in range(1,o+1):
-          #      for iType in range(1,k+1):
-          #
-          #          delQ[iOut][iType].Append(q[iType][iOut]*c)
-
-           # for iOut in range(1,o):
-           #     for iType in range(1,k):
-           #         Q+=n[iOut][iType]*Ks*Km*Kl
+    # def EstimateApproachQueueResolutionTime(self,text):
+    #     try:
+    #         tQ=(Q/s0)+deltaT+X*c
+    #        # Q=0
+    #       #  delQ=[[],[]]
+    #         #цикловой объем спроса
+    #        # for iOut in range(1,o+1):
+    #       #      for iType in range(1,k+1):
+    #       #
+    #       #          delQ[iOut][iType].Append(q[iType][iOut]*c)
+    #
+    #        # for iOut in range(1,o):
+    #        #     for iType in range(1,k):
+    #        #         Q+=n[iOut][iType]*Ks*Km*Kl
 
 
 
