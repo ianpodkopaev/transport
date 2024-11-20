@@ -12,7 +12,7 @@ def estimate_approach_queue_resolution_time(
         InLanesCount  # количество входных полос
 ):
     # s0 - стандартный поток насыщения (из rightOfWayIntervals)
-    s0 = rightOfWayIntervals[0]
+    s0 = rightOfWayIntervals[1]
 
     # tLoss - максимальное время потерь насыщенности (из rightOfWayIntervals)
     tLoss = rightOfWayIntervals[1]
