@@ -80,6 +80,7 @@ class MainWindow(QMainWindow):
         self.ui.pushButton.clicked.connect(self.ButtonClick2)
         self.ui.pushButton.clicked.connect(self.ButtonClick1)
         self.ui.pushButton.clicked.connect(self.ButtonClick3)
+        self.ui.pushButton.clicked.connect(self.lanequeue)
 
         self.TableFour()
 
@@ -272,6 +273,7 @@ class MainWindow(QMainWindow):
             print("reductionByDynamicCoeffs")
             print(reductionByDynamicCoeffs)
             print("------")
+            return(reductionByDynamicCoeffs)
         except ValueError:
             return
 
@@ -283,8 +285,7 @@ class MainWindow(QMainWindow):
 
             # Инициализация массива значениями False
             traffic_array = np.full((linesCount, outputsCount, veh_types), False)
-            print("Initialized traffic_array:")
-            print(traffic_array)
+
 
             # Сопоставление индексов направлений (Л, Г, О) с измерением veh_types
             for i in range(linesCount):  # Перебираем линии
@@ -300,7 +301,7 @@ class MainWindow(QMainWindow):
 
             print("Filled traffic_array:")
             print(traffic_array)
-
+            return(traffic_array)
         except ValueError:
             return
 
@@ -332,8 +333,9 @@ class MainWindow(QMainWindow):
 
             print("INtencity")
             print(veh_types_array)
+            return veh_types_array
         except ValueError:
-            return
+            return()
 
     def ButtonClick3(self):
         try:
@@ -352,13 +354,39 @@ class MainWindow(QMainWindow):
                         intervals_array[i][j] = int(item.text())  # Если это числовое значение
             print("Intervals")
             print(intervals_array)
-
+            return (intervals_array)
         except ValueError:
             return
 
+    def deltaq(self):
+        linesCount = int(self.ui.lineEdit_4.text())
+        cycleTime = int(self.ui.lineEdit_3.text())
+        outputsCount = int(self.ui.lineEdit_2.text()) + 1
+        deltaQ = np.full((outputsCount), 0)
 
+        veh_types_array = np.sum(self.ButtonClick1(), axis=1)
+        print(1111)
+        print(veh_types_array)
+        print("Lanequeue")
+        print(deltaQ)
+        for out in range (outputsCount):
+                    deltaQ[out]=cycleTime * veh_types_array[out]
+        print(deltaQ)
+        return(deltaQ)
+
+    def lanequeue(self):
+        linesCount = int(self.ui.lineEdit_4.text())
+        cycleTime = int(self.ui.LineEdit_3.text())
+        outputsCount = int(self.ui.lineEdit_2.text()) + 1
+        deltaQ=self.deltaq()
+        for line in range(linesCount):
+            for out in range (outputsCount):
+                for veh in range (3):
+                    print()
+#deltaQ[o,k]=q[o,k]*c
 
 app = QApplication(sys.argv)
 window = MainWindow()
 window.show()
 app.exec()
+
